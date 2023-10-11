@@ -13,17 +13,17 @@
         xmlns:p="http://primefaces.org/ui"
         xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
         xmlns:c="http://java.sun.com/jsp/jstl/core"
-        template="/templates/Plantilla.xhtml">
+        template="/templates/Plantillasinmenu.xhtml">
 
     <ui:define name="content">
         <h:form id="loginForm">
-            <b:container layout="fluid">
-                <b:panel title="login screen" look="primary">
+            <b:container layout="fluid" styleClass="card">
+                <b:panel title="Iniciar Sesión" collapsible="false">
                     <b:row>
-                        <b:column medium-screen="2">
-                            <h:outputText value="Username:" for="username" />
+                        <b:column>
+                            <h:outputText value="Usuario" for="username" />
                         </b:column>
-                        <b:column medium-screen="4">
+                        <b:column>
                             <b:inputText placeholder="Username" id="username" value="">
                                 <f:facet name="prepend">
                                     <b:icon name="user" />
@@ -34,11 +34,10 @@
                             <b:message for="username" />
                         </b:column>
                     </b:row>
-                    <b:row tooltip="This password has fancy error messages.">
-                        <b:column medium-screen="2">
-                            <h:outputText value="Password:" />
+                        <b:column>
+                            <h:outputText value="Contraseña" />
                         </b:column>
-                        <b:column medium-screen="4">
+                        <b:column>
                             <b:inputSecret placeholder="Password" id="password" value=""
                                            ajax="true" autocomplete="false" update="@(.message)">
                                 <f:facet name="prepend">
@@ -49,14 +48,12 @@
                         <b:column medium-screen="6" styleClass="message">
                         </b:column>
                     </b:row>
-                    <b:row>
+                    <b:row styleClass="centrado">
                         <b:column span="2" offset="2">
-                            <b:commandButton value="login" onclick="ajax:loginBean.login()" update="@form" look="primary"
-                                             style="width:100%" />
+                            <b:commandButton value="Log In"/>
                         </b:column>
                         <b:column span="2">
-                            <b:commandButton value="password forgotten" onclick="ajax:loginBean.forgotPassword()" update="@form"
-                                             look="danger" style="width:100%" />
+                            <b:commandButton  value="Forgot Password?"/>
                         </b:column>
                     </b:row>
                 </b:panel>

@@ -1,0 +1,99 @@
+:root {
+    font-size: 20px;
+    box-sizing: inherit;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+p:not(:last-child) {
+    margin-bottom: 1.5em;
+}
+
+body {
+    font: 1em/1.618 Inter, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 30px;
+
+    color: #224;
+    background: url(https://images.unsplash.com/photo-1552084117-56a987666449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80) center / cover no-repeat fixed;
+}
+
+.card {
+    max-width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 500px;
+    height: 300px;
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(15px);
+    text-align: center;
+}
+
+.card-footer {
+    font-size: 0.65em;
+    color: #446;
+}
+
+.centrado {
+
+text-align: center;
+}
+
+
+button {
+    --b: 3px; /* border thickness */
+    --s: .15em; /* size of the corner */
+    --c: #BD5532;
+
+    padding: calc(.05em + var(--s)) calc(.3em + var(--s));
+    color: var(--c);
+    --_p: var(--s);
+    background: conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--c) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2 * var(--_p)) calc(100% - var(--b) - 2 * var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .2em;
+}
+
+button:hover,
+button:focus-visible {
+    --_p: 0px;
+    outline-color: var(--c);
+    outline-offset: .05em;
+}
+
+button:active {
+    background: var(--c);
+    color: #fff;
+}
+
+button {
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
+    cursor: pointer;
+    border: none;
+    margin: .1em;
+}
+
