@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:b="http://bootsfaces.net/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        template="/templates/Plantilla.xhtml">
+    <h:outputStylesheet name="css/Fonts.css"/>
+
+    <ui:define name="content" style="align-content: center">
+        <div class="container-list">
+            <h:form id="clienteView"/>
+            <h2>Lista de clientes</h2>
+            <p>Permite la vista al administrador de todos los clientes. En accion se podrá visualizar el historial de cada cliente mediante un
+                botón. Utilizando ya sea un modal u otra página aparte</p>
+
+            <h:form>
+                <b:dataTable var="producto" rows="10">
+                    <b:dataTableColumn label="Nombre">
+                        <h:outputText value="#{cliente.nombre}"/>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn label="NIT">
+                        <h:outputText value="#{cliente.nit}"/>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn label="Numero de Registro">
+                        <h:outputText value="#{cliente.registro}"/>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn label="Direccion">
+                        <h:outputText value="#{cliente.direccion}"/>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn label="Departamento">
+                        <h:outputText value="#{cliente.departamento}"/>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn label="Giro">
+                        <h:outputText value="#{cliente.giro}"/>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn label="Acción">
+                        <h:outputText value="#{cliente.giro}"/>
+                    </b:dataTableColumn>
+                </b:dataTable>
+            </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>
+

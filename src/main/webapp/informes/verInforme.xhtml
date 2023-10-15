@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: menda
+  Date: 13/10/2023
+  Time: 16:39
+-->
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:b="http://bootsfaces.net/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        template="/templates/Plantilla.xhtml">
+    <h:outputStylesheet name="css/Fonts.css"/>
+
+    <ui:define name="content" style="align-content: center">
+        <h:form id="loginForm" />
+        <h1>Modulo de Informes y Exportacion A</h1>
+        <p>Este módulo permite crear informes y exportar datos en varios formatos. las características importantes serán:</p>
+        <ol>
+            <li>Elaborar informes de ventas, inventario y ganancias.</li>
+            <li>Exportar informes a formatos como PDF, Excel, CSV, etc.</li>
+        </ol>
+
+        <br/>
+        <br/>
+        <div class="container-mod2">
+        <h2>Informe de Ventas</h2>
+
+        <b:dataTable var="venta" value="#{informesController.listaVentas}">
+            <b:dataTableColumn label="Fecha">
+                <h:outputText value="#{venta.fecha}" />
+            </b:dataTableColumn>
+            <b:dataTableColumn label="Cliente">
+                <h:outputText value="#{venta.cliente}" />
+            </b:dataTableColumn>
+            <b:dataTableColumn label="Monto">
+                <h:outputText value="#{venta.monto}" />
+            </b:dataTableColumn>
+        </b:dataTable>
+        </div>
+    </ui:define>
+
+</ui:composition>

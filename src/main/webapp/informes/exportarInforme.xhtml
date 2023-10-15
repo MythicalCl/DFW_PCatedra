@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: menda
+  Date: 13/10/2023
+  Time: 17:20
+-->
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:b="http://bootsfaces.net/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        template="/templates/Plantilla.xhtml">
+    <h:outputStylesheet name="css/Fonts.css"/>
+
+    <ui:define name="content" style="align-content: center">
+        <h:form id="loginForm"/>
+        <h1>Modulo de Informes y Exportacion B</h1>
+        <p>Este módulo permite crear informes y exportar datos en varios formatos. las características importantes serán:</p>
+        <ol>
+            <li>Elaborar informes de ventas, inventario y ganancias.</li>
+            <li>Exportar informes a formatos como PDF, Excel, CSV, etc.</li>
+        </ol>
+
+        <br/>
+        <br/>
+        <div class="container-mod">
+            <h2>Exportar Informes</h2>
+            <b:form>
+                <h5>Formato:</h5>
+                <b:selectOneMenu>
+                    <f:selectItem itemLabel="PDF" itemValue="1"/>
+                    <f:selectItem itemLabel="EXCEL" itemValue="2"/>
+                    <f:selectItem itemLabel="CSV" itemValue="3"/>
+                </b:selectOneMenu>
+                <b:panelGrid columns="2">
+                    <h5>Fecha inicial:</h5>
+                    <b:dateTimePicker icon-position='left' show-date='true'/>
+                    <h5>Fecha final:</h5>
+                    <b:dateTimePicker icon-position='left' show-date='true'/>
+                </b:panelGrid>
+                <div class="btn-move">
+                    <b:commandButton value="Generar Informe" look="primary"/>
+                </div>
+            </b:form>
+        </div>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:b="http://bootsfaces.net/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        template="../templates/Plantilla.xhtml">
+    <h:outputStylesheet name="css/Fonts.css"/>
+
+    <ui:define name="content">
+        <div class="container-mod">
+            <p>Este modulo permite la creación de un nuevo usuario, ya que no será de uso público, sino, interno de la empresa, por lo que lo manejará unicamente el administrador</p>
+            <b:form horizontal="true">
+                <h1>Nuevo Usuario</h1>
+                <b:inputText label="Nombre:" placeholder="Ingrese el nombre"/>
+
+                <b:inputText label="DUI:" placeholder="Ingrese su DUI"/>
+
+                <b:inputText label="Correo Electronico:" placeholder="Ingrese su correo electronico"/>
+                <f:facet name="append">
+                    <h:outputText value="@"/>
+                </f:facet>
+
+                <b:inputSecret label="Contraseña:" placeholder="Ingrese la contraseña"/>
+
+                <b:panelGrid columns="2">
+                    <b:commandButton value="Guardar" ajax="true" update="@none" look="primary" style="width:80px"/>
+                    <b:commandButton value="Cancelar" ajax="true" update="@none" look="danger" style="width:80px"/>
+                </b:panelGrid>
+
+            </b:form>
+        </div>
+
+
+    </ui:define>
+
+</ui:composition>
+

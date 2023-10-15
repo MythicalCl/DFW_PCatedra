@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Created by IntelliJ IDEA.
-  User: ivanm
-  Date: 9/29/2023
-  Time: 4:48 PM
--->
+
 <ui:composition
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:h="http://java.sun.com/jsf/html"
@@ -14,6 +9,7 @@
         xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
         xmlns:c="http://java.sun.com/jsp/jstl/core"
         template="/templates/Plantillasinmenu.xhtml">
+    <h:outputStylesheet name="css/Fonts.css"/>
 
     <ui:define name="content">
         <h:form id="loginForm">
@@ -24,37 +20,32 @@
                             <h:outputText value="Usuario" for="username" />
                         </b:column>
                         <b:column>
-                            <b:inputText placeholder="Username" id="username" value="">
+                            <b:inputText placeholder="Username" id="username">
                                 <f:facet name="prepend">
                                     <b:icon name="user" />
                                 </f:facet>
                             </b:inputText>
-                        </b:column>
-                        <b:column medium-screen="6" style-class="message">
-                            <b:message for="username" />
                         </b:column>
                     </b:row>
                         <b:column>
                             <h:outputText value="Contraseña" />
                         </b:column>
                         <b:column>
-                            <b:inputSecret placeholder="Password" id="password" value=""
-                                           ajax="true" autocomplete="false" update="@(.message)">
+                            <b:inputSecret placeholder="Password" id="password">
                                 <f:facet name="prepend">
                                     <b:iconAwesome name="key" />
                                 </f:facet>
                             </b:inputSecret>
                         </b:column>
-                        <b:column medium-screen="6" styleClass="message">
+                    <b:row>
+                        <b:panelGrid columns="2">
+                        <b:column>
+                            <b:commandButton value="Ver Clientes"  action="/clientes/verClientes" />
                         </b:column>
-                    </b:row>
-                    <b:row styleClass="centrado">
-                        <b:column span="2" offset="2">
-                            <b:commandButton value="Log In"/>
+                        <b:column>
+                            <b:commandButton  value="Resetear contraseña" action="/autenticacion/resetPassword"/>
                         </b:column>
-                        <b:column span="2">
-                            <b:commandButton  value="Forgot Password?"/>
-                        </b:column>
+                        </b:panelGrid>
                     </b:row>
                 </b:panel>
             </b:container>

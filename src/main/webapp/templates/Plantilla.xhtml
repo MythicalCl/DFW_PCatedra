@@ -6,60 +6,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:b="http://bootsfaces.net/ui"
-      xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
+
 <h:head>
-    <title>Inventario Libros</title>
-    <h:outputStylesheet name="css/bootstrap.min.css"/>
-    <h:outputStylesheet name="css/alertify.core.css"/>
-    <h:outputStylesheet name="css/alertify.default.css"/>
-    <h:outputScript name="js/alertify.js"
-    />
+    <title>Facturador DTECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200" rel="stylesheet"/>
+
 </h:head>
 
 <h:body>
-    <p:menubar>
-        <p:submenu label="Libros" icon="pi pi-fw pi-file">
-            <p:menuitem value="Ver libros"/>
-        </p:submenu>
-        <p:submenu label="Generos" icon="pi pi-fw pi-folder-open">
-            <p:menuitem value="Ver Generos"/>
-        </p:submenu>
-        <p:submenu label="Editoriales" icon="pi pi-fw pi-print">
-            <p:menuitem value="Ver editoriales"/>
-        </p:submenu>
-        <p:submenu label="Autores"  icon="pi pi-fw pi-user">
-            <p:menuitem value="Autores"/>
-        </p:submenu>
-    </p:menubar>
-
+    <b:navBar fluid="true" sticky="true" brand="DTECH" brandHref="http://localhost:8080/DFW_PCatedra-1.0-SNAPSHOT/">
+        <b:navbarLinks>
+            <b:dropMenu value="Clientes" iconAwesome="person">
+            <b:navLink value="Lista de clientes"
+                       outcome="/clientes/verClientes">
+            </b:navLink>
+                <b:navLink value="Nuevo cliente"
+                           outcome="/clientes/nuevoCliente">
+                </b:navLink>
+                <b:navLink value="Nuevo usuario"
+                           outcome="/clientes/nuevoUsuario">
+                </b:navLink>
+            </b:dropMenu>
+            <b:navLink value="Nuevo Pedido"
+                       outcome="/facturacion/nuevaFactura">
+            </b:navLink>
+            <b:navLink value="Dashboard"
+                       outcome="/ingresos/ingresosDashboard">
+            </b:navLink>
+            <b:dropMenu value="Productos">
+            <b:navLink value="Lista de Productos"
+                       outcome="/inventario/verProducto">
+            </b:navLink>
+                <b:navLink value="Nuevo Producto"
+                           outcome="/inventario/nuevoProducto">
+                </b:navLink>
+            </b:dropMenu>
+            <b:dropMenu value="Informes">
+                <b:navLink value="Ver informes"
+                           outcome="/informes/verInforme">
+                </b:navLink>
+                <b:navLink value="Exportar Informes"
+                           outcome="/informes/exportarInforme">
+                </b:navLink>
+            </b:dropMenu>
+            <b:navLink value="Personalización"
+                       outcome="/personalizacion/personalizacion">
+            </b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
     <div class="row">
-        <div class="col-md-1 col-sm-1">
-            <p:slideMenu>
-                <p:submenu label="BootFaces">
-                    <p:menuitem value="Documentación sobre bootfaces" url="http://www.bootsfaces.net" icon="pi pi-globe" />
-                </p:submenu>
-                <p:submenu label="JSF">
-                    <p:menuitem value="Documentación sobre JSF" url="https://www.liferayfaces.org/pt/jsf-showcase"
-                    icon="pi pi-th-large"/>
-                </p:submenu>
-                <p:submenu label="Primefaces">
-                    <p:menuitem value="Documentación sobre primefaces" url="https://www.primefaces.org/showcase/index.xhtml"
-                    icon="pi pi-prime"/>
-                </p:submenu>
-            </p:slideMenu>
-        </div>
         <div class="col-md-11 col-sm-11">
             <ui:insert name="content">
                 Contenido por defecto
             </ui:insert>
         </div>
     </div>
-
     <div class="row">
-        <div class="py-3 my-4">
-            <p class="text-center text-muted">© 2023 UDB, DWF404</p>
+        <div class="row py-3 mt-4 text-center">
+            <p class="text-muted">DWF404, Proyecto de Cátedra</p>
         </div>
     </div>
 

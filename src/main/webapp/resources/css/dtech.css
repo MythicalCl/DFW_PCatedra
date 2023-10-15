@@ -56,9 +56,10 @@ body {
     color: #446;
 }
 
-.centrado {
+.button-wrap {
 
-text-align: center;
+    width: 100vh;
+
 }
 
 
